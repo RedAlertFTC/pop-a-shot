@@ -1,5 +1,6 @@
 {
   "robotics": {
+    "title": "Robotics Quiz",
     "questions": [
       {
         "question": "Which part of a robot helps it move?",
@@ -119,6 +120,7 @@
     ]
   },
   "math": {
+    "title": "Math Quiz",
     "questions": [
       {
         "question": "6 + 7",

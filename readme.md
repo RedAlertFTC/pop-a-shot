@@ -28,10 +28,18 @@ Observe Raspberry Pi GPIO using
 watch -n.2 gpio readall
 ```
 
-Command line to launch Chromium in 'kiosk mode'
+Command line to launch Edge in 'kiosk mode'
 ```
-Microsoft Edge on Mac % "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge" http://localhost:3000 --kiosk  --edge-kiosk-type=public-browsing --no-first-run
+# Mac
+"/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge" http://localhost:3000 --kiosk --edge-kiosk-type=public-browsing --no-first-run
+
+# Windows 11 Edge
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" http://localhost:3000 --kiosk --edge-kiosk-type=public-browsing --no-first-run
+
+# Windows 11 Chrome
+"C:\Program Files\Google\Chrome\Application\chrome.exe" http://localhost:3000 --kiosk --edge-kiosk-type=public-browsing --no-first-run
 ```
+
 
 ## Team game brainstorming ideas
 * 8-bit graphics & fonts

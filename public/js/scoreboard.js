@@ -1,3 +1,11 @@
+// Force refresh after 5 seconds on first load to fix graphical issues
+if (!sessionStorage.getItem("hasRefreshed")) {
+  sessionStorage.setItem("hasRefreshed", "true");
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
+}
+
 var onPi = true;
 
 var socket = io();
@@ -21,6 +29,13 @@ var questionStartTime;
 var shotClockStart;
 var swappedQuestions = false;
 
+// Question set selection and long-press variables
+var currentQuestionSet = "robotics";
+var questionSets = ["robotics", "math"];
+var longPressStartTime = 0;
+var longPressThreshold = 500; // 1.5 seconds
+var isLongPressing = false;
+
 // store screens in Graphics objects
 var startScreen, endScreen;
 
@@ -38,7 +53,6 @@ var gameLength = 45;
 let controllers = [];
 var released = [];
 var pressed = [];
-
 
 function preload() {
   splashImage = loadImage("images/splash.jpg");
@@ -197,13 +211,38 @@ function drawStartScreen() {
     height / 2 + height / 4
   );
 
-  var startButton = createButton("GET READY!");
-  startButton.position(width / 2 - 200, height / 2);
-  startButton.size(400, 100);
-  startButton.style("font-size", "40px");
-  startButton.style("background-color", "yellow");
-  startButton.style("color", "purple");
-  startButton.mousePressed(startNewGame);
+  // Display current question set
+  startScreen.textSize(60);
+  var questionSetText = "Question Set: " + quiz[currentQuestionSet].title;
+  startScreen.text(
+    questionSetText,
+    width / 2 - startScreen.textWidth(questionSetText) / 2,
+    height / 2 - 50
+  );
+
+  // Display instructions
+  startScreen.textSize(40);
+  var instructionText = "Short press: Start!";
+  startScreen.text(
+    instructionText,
+    width / 2 - startScreen.textWidth(instructionText) / 2,
+    height / 2 + 50
+  );
+
+  var startText2 = "Long Press: Change Questions";
+  startScreen.text(
+    startText2,
+    width / 2 - startScreen.textWidth(startText2) / 2,
+    height / 2 + 100
+  );
+
+  // var startButton = createButton("GET READY!");
+  // startButton.position(width / 2 - 200, height / 2);
+  // startButton.size(400, 100);
+  // startButton.style("font-size", "40px");
+  // startButton.style("background-color", "yellow");
+  // startButton.style("color", "purple");
+  // startButton.mousePressed(startNewGame);
 
   image(startScreen, 0, 0);
 }
@@ -304,7 +343,7 @@ function drawMainScreen() {
   strokeWeight(5);
   fill("#0B03FF");
   var leftAnswerText = currentAnswers[leftAnswer];
-  text(leftAnswerText, 200, height / 2); 
+  text(leftAnswerText, 200, height / 2);
   fill("#01F105");
   var rightAnswerText = currentAnswers[rightAnswer];
   text(rightAnswerText, width - textWidth(rightAnswerText) - 200, height / 2);
@@ -381,10 +420,14 @@ function checkGamepad() {
 }
 
 function keyPressed() {
-  // if spacebar or B is pressed, start new game
+  // if spacebar or B is pressed, start new game or begin long-press detection
   if (currentScreenState == 0) {
-    if (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0))
-      startNewGame();
+    if (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0)) {
+      if (!isLongPressing) {
+        longPressStartTime = Date.now();
+        isLongPressing = true;
+      }
+    }
   } else if (currentScreenState == 1) {
     // if 1 or 9 is pressed, shot is made in basket 1
     if (keyCode === "1".charCodeAt(0)) {
@@ -433,6 +476,27 @@ function keyPressed() {
   }
 }
 
+function keyReleased() {
+  if (currentScreenState == 0) {
+    if (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0)) {
+      if (isLongPressing) {
+        var pressDuration = Date.now() - longPressStartTime;
+        if (pressDuration < longPressThreshold) {
+          // Short press - start game        
+          startNewGame();
+        } else {
+          // Long press - change question set
+          var currentIndex = questionSets.indexOf(currentQuestionSet);
+          var nextIndex = (currentIndex + 1) % questionSets.length;
+          currentQuestionSet = questionSets[nextIndex];
+        }
+        isLongPressing = false;
+        longPressStartTime = 0;
+      }
+    }
+  }
+}
+
 function startNewGame() {
   changeScreenState();
   player1Score = 0;
@@ -474,7 +538,7 @@ function shotMade(basket, whoMadeIt) {
 
 function randomQuestion() {
   questionStartTime = Date.now();
-  var questions = quiz["robotics"]["questions"];
+  var questions = quiz[currentQuestionSet]["questions"];
   shotClockStart = null;
   var questionAnswerPair =
     questions[Math.floor(Math.random() * questions.length)];
