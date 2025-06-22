@@ -1,6 +1,6 @@
 {
   "robotics": {
-    "title": "Robotics Quiz",
+    "title": "Robotics",
     "questions": [
       {
         "question": "Which part of a robot helps it move?",
@@ -98,11 +98,6 @@
         "correct_answer": "Learning"
       },
       {
-        "question": "What do teams build in FIRST LEGO League?",
-        "answers": ["Robots", "Castles", "Machines", "Spaceships"],
-        "correct_answer": "Robots"
-      },
-      {
         "question": "What is a core value of FIRST LEGO League?",
         "answers": ["Teamwork", "Flying", "Cooperation", "Competition"],
         "correct_answer": "Teamwork"
@@ -116,51 +111,581 @@
         "question": "What is the brain of a LEGO robot called?",
         "answers": ["Controller", "CPU", "Processor", "Heart"],
         "correct_answer": "Controller"
+      },
+      {
+        "question": "Which part of a robot helps it move?",
+        "answers": ["Motor", "Engine", "Rotor", "Banana"],
+        "correct_answer": "Motor"
+      },
+      {
+        "question": "What powers most robots?",
+        "answers": ["Battery", "Power", "Cell", "Pizza"],
+        "correct_answer": "Battery"
+      },
+      {
+        "question": "Who founded FIRST?",
+        "answers": ["Dean Kamen", "Bill Gates", "Steve Jobs", "SpongeBob"],
+        "correct_answer": "Dean Kamen"
+      },
+      {
+        "question": "What year was FIRST founded?",
+        "answers": ["1989", "1995", "2000", "Yesterday"],
+        "correct_answer": "1989"
+      },
+      {
+        "question": "What sensor helps robots know their position?",
+        "answers": ["Encoder", "Camera", "Microphone", "Magic 8-Ball"],
+        "correct_answer": "Encoder"
+      },
+      {
+        "question": "What is gracious professionalism?",
+        "answers": [
+          "FIRST's core value",
+          "A robot part",
+          "A programming term",
+          "Fancy dancing"
+        ],
+        "correct_answer": "FIRST's core value"
+      },
+      {
+        "question": "What happens during autonomous period?",
+        "answers": [
+          "Robot runs by itself",
+          "Drivers control robot",
+          "Robot sleeps",
+          "Snack time"
+        ],
+        "correct_answer": "Robot runs by itself"
+      },
+      {
+        "question": "What do teams receive each year?",
+        "answers": [
+          "Game challenge",
+          "Free pizza",
+          "New uniforms",
+          "Pet robots"
+        ],
+        "correct_answer": "Game challenge"
       }
     ]
   },
-  "math": {
-    "title": "Math Quiz",
+  "45-grade-math": {
+    "title": "Math (Grades 4-5)",
     "questions": [
       {
-        "question": "6 + 7",
-        "answers": ["13", "12", "14", "11"]
+        "question": "What is 6 × 8?",
+        "answers": ["48", "42", "54", "56"],
+        "correct_answer": "48"
       },
       {
-        "question": "15 - 5",
-        "answers": ["10", "9", "11", "8"]
+        "question": "What is 72 ÷ 9?",
+        "answers": ["8", "9", "7", "6"],
+        "correct_answer": "8"
       },
       {
-        "question": "3 * 4",
-        "answers": ["12", "11", "13", "10"]
+        "question": "What is 35 + 27?",
+        "answers": ["62", "52", "72", "58"],
+        "correct_answer": "62"
       },
       {
-        "question": "20 / 5",
-        "answers": ["4", "5", "3", "6"]
+        "question": "What is 80 - 34?",
+        "answers": ["46", "54", "44", "56"],
+        "correct_answer": "46"
       },
       {
-        "question": "9 - 3",
-        "answers": ["6", "7", "5", "8"]
+        "question": "What is 1/2 of 18?",
+        "answers": ["9", "8", "10", "6"],
+        "correct_answer": "9"
       },
       {
-        "question": "2 * 5",
-        "answers": ["10", "9", "11", "8"]
+        "question": "What is 7 × 9?",
+        "answers": ["63", "56", "72", "54"],
+        "correct_answer": "63"
       },
       {
-        "question": "18 / 3",
-        "answers": ["6", "5", "7", "4"]
+        "question": "Round 47 to the nearest 10",
+        "answers": ["50", "40", "45", "60"],
+        "correct_answer": "50"
       },
       {
-        "question": "8 + 4",
-        "answers": ["12", "11", "13", "10"]
+        "question": "What is 4²?",
+        "answers": ["16", "8", "12", "20"],
+        "correct_answer": "16"
       },
       {
-        "question": "14 - 7",
-        "answers": ["7", "6", "8", "5"]
+        "question": "What is 64 ÷ 8?",
+        "answers": ["8", "7", "9", "6"],
+        "correct_answer": "8"
       },
       {
-        "question": "5 * 3",
-        "answers": ["15", "14", "16", "13"]
+        "question": "How many edges does a cube have?",
+        "answers": ["12", "8", "6", "10"],
+        "correct_answer": "12"
+      },
+      {
+        "question": "What is 8 × 6?",
+        "answers": ["48", "42", "54", "36"],
+        "correct_answer": "48"
+      },
+      {
+        "question": "What is 1/4 of 20?",
+        "answers": ["5", "4", "6", "8"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 100 - 37?",
+        "answers": ["63", "73", "53", "67"],
+        "correct_answer": "63"
+      },
+      {
+        "question": "What is 9 × 7?",
+        "answers": ["63", "56", "72", "54"],
+        "correct_answer": "63"
+      },
+      {
+        "question": "How many sides does an octagon have?",
+        "answers": ["8", "6", "10", "7"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What is 42 ÷ 6?",
+        "answers": ["7", "8", "6", "9"],
+        "correct_answer": "7"
+      },
+      {
+        "question": "What is 25 + 48?",
+        "answers": ["73", "63", "83", "67"],
+        "correct_answer": "73"
+      },
+      {
+        "question": "What is 11 × 4?",
+        "answers": ["44", "40", "48", "36"],
+        "correct_answer": "44"
+      },
+      {
+        "question": "What is 5²?",
+        "answers": ["25", "20", "30", "15"],
+        "correct_answer": "25"
+      },
+      {
+        "question": "What is 90 ÷ 10?",
+        "answers": ["9", "10", "8", "11"],
+        "correct_answer": "9"
+      }
+    ]
+  },
+  "23-grade-math": {
+    "title": "Math (Grades 2-3)",
+    "questions": [
+      {
+        "question": "What is 7 + 6?",
+        "answers": ["13", "12", "14", "11"],
+        "correct_answer": "13"
+      },
+      {
+        "question": "What is 15 - 8?",
+        "answers": ["7", "6", "8", "9"],
+        "correct_answer": "7"
+      },
+      {
+        "question": "What is 5 × 3?",
+        "answers": ["15", "12", "18", "10"],
+        "correct_answer": "15"
+      },
+      {
+        "question": "What is 20 ÷ 4?",
+        "answers": ["5", "4", "6", "8"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 9 + 8?",
+        "answers": ["17", "16", "18", "15"],
+        "correct_answer": "17"
+      },
+      {
+        "question": "What is 14 - 6?",
+        "answers": ["8", "7", "9", "10"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What is 4 × 6?",
+        "answers": ["24", "20", "28", "18"],
+        "correct_answer": "24"
+      },
+      {
+        "question": "What is 18 ÷ 2?",
+        "answers": ["9", "8", "10", "6"],
+        "correct_answer": "9"
+      },
+      {
+        "question": "How many sides does a rectangle have?",
+        "answers": ["4", "3", "6", "5"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "What is 25 + 15?",
+        "answers": ["40", "35", "45", "30"],
+        "correct_answer": "40"
+      },
+      {
+        "question": "What is half of 16?",
+        "answers": ["8", "6", "10", "12"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What is 3 × 7?",
+        "answers": ["21", "18", "24", "15"],
+        "correct_answer": "21"
+      },
+      {
+        "question": "What is 30 - 12?",
+        "answers": ["18", "22", "16", "20"],
+        "correct_answer": "18"
+      },
+      {
+        "question": "What is 2 × 8?",
+        "answers": ["16", "14", "18", "12"],
+        "correct_answer": "16"
+      },
+      {
+        "question": "What is 24 ÷ 3?",
+        "answers": ["8", "6", "9", "7"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "How many corners does a triangle have?",
+        "answers": ["3", "4", "2", "5"],
+        "correct_answer": "3"
+      },
+      {
+        "question": "What is 12 + 19?",
+        "answers": ["31", "29", "33", "27"],
+        "correct_answer": "31"
+      },
+      {
+        "question": "What is 5 × 5?",
+        "answers": ["25", "20", "30", "15"],
+        "correct_answer": "25"
+      },
+      {
+        "question": "What is 40 - 16?",
+        "answers": ["24", "26", "22", "28"],
+        "correct_answer": "24"
+      },
+      {
+        "question": "What is 35 ÷ 5?",
+        "answers": ["7", "6", "8", "5"],
+        "correct_answer": "7"
+      }
+    ]
+  },
+  "k1-grade-math": {
+    "title": "Math (Grades K-1)",
+    "questions": [
+      {
+        "question": "What is 2 + 3?",
+        "answers": ["5", "4", "6", "3"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 6 - 2?",
+        "answers": ["4", "3", "5", "8"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "How many sides does a circle have?",
+        "answers": ["0", "1", "2", "3"],
+        "correct_answer": "0"
+      },
+      {
+        "question": "What comes after 7?",
+        "answers": ["8", "6", "9", "5"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What is 1 + 4?",
+        "answers": ["5", "3", "6", "4"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 8 - 3?",
+        "answers": ["5", "4", "6", "11"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "How many fingers on one hand?",
+        "answers": ["5", "4", "6", "10"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 3 + 2?",
+        "answers": ["5", "4", "6", "1"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 9 - 4?",
+        "answers": ["5", "6", "4", "13"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What comes before 10?",
+        "answers": ["9", "8", "11", "5"],
+        "correct_answer": "9"
+      },
+      {
+        "question": "What is 4 + 1?",
+        "answers": ["5", "3", "6", "4"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "How many wheels does a bike have?",
+        "answers": ["2", "3", "4", "1"],
+        "correct_answer": "2"
+      },
+      {
+        "question": "What is 7 - 2?",
+        "answers": ["5", "4", "6", "9"],
+        "correct_answer": "5"
+      },
+      {
+        "question": "What is 2 + 2?",
+        "answers": ["4", "3", "5", "6"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "How many sides does a square have?",
+        "answers": ["4", "3", "5", "2"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "What is 6 + 1?",
+        "answers": ["7", "5", "8", "6"],
+        "correct_answer": "7"
+      },
+      {
+        "question": "What is 5 - 1?",
+        "answers": ["4", "3", "5", "6"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "How many eyes do you have?",
+        "answers": ["2", "1", "3", "4"],
+        "correct_answer": "2"
+      },
+      {
+        "question": "What is 3 + 3?",
+        "answers": ["6", "5", "7", "9"],
+        "correct_answer": "6"
+      },
+      {
+        "question": "What is 10 - 5?",
+        "answers": ["5", "4", "6", "15"],
+        "correct_answer": "5"
+      }
+    ]
+  },
+  "stem": {
+    "title": "STEM",
+    "questions": [
+      {
+        "question": "What planet is closest to the sun?",
+        "answers": ["Mercury", "Venus", "Earth", "Mars"],
+        "correct_answer": "Mercury"
+      },
+      {
+        "question": "How many legs does an insect have?",
+        "answers": ["6", "4", "8", "10"],
+        "correct_answer": "6"
+      },
+      {
+        "question": "What force pulls objects to Earth?",
+        "answers": ["Gravity", "Magnetism", "Friction", "Pressure"],
+        "correct_answer": "Gravity"
+      },
+      {
+        "question": "What do plants need to make food?",
+        "answers": ["Sunlight", "Darkness", "Salt", "Ice"],
+        "correct_answer": "Sunlight"
+      },
+      {
+        "question": "How many bones are in an adult human body?",
+        "answers": ["206", "150", "300", "100"],
+        "correct_answer": "206"
+      },
+      {
+        "question": "What gas do plants release during photosynthesis?",
+        "answers": ["Oxygen", "Carbon dioxide", "Nitrogen", "Helium"],
+        "correct_answer": "Oxygen"
+      },
+      {
+        "question": "What is the hardest natural substance?",
+        "answers": ["Diamond", "Gold", "Iron", "Quartz"],
+        "correct_answer": "Diamond"
+      },
+      {
+        "question": "How many chambers does a human heart have?",
+        "answers": ["4", "2", "6", "3"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "What is the largest mammal in the world?",
+        "answers": ["Blue whale", "Elephant", "Giraffe", "Shark"],
+        "correct_answer": "Blue whale"
+      },
+      {
+        "question": "At what temperature does water freeze?",
+        "answers": ["32°F", "100°F", "0°F", "212°F"],
+        "correct_answer": "32°F"
+      },
+      {
+        "question": "What is the center of an atom called?",
+        "answers": ["Nucleus", "Electron", "Proton", "Neutron"],
+        "correct_answer": "Nucleus"
+      },
+      {
+        "question": "How many teeth do most adults have?",
+        "answers": ["32", "28", "24", "36"],
+        "correct_answer": "32"
+      },
+      {
+        "question": "What type of animal is a frog?",
+        "answers": ["Amphibian", "Reptile", "Mammal", "Fish"],
+        "correct_answer": "Amphibian"
+      },
+      {
+        "question": "What simple machine is a seesaw?",
+        "answers": ["Lever", "Pulley", "Wedge", "Screw"],
+        "correct_answer": "Lever"
+      },
+      {
+        "question": "How long does it take Earth to orbit the sun?",
+        "answers": ["1 year", "1 month", "1 day", "1 week"],
+        "correct_answer": "1 year"
+      },
+      {
+        "question": "What organ pumps blood through your body?",
+        "answers": ["Heart", "Lungs", "Brain", "Liver"],
+        "correct_answer": "Heart"
+      },
+      {
+        "question": "What is the fastest land animal?",
+        "answers": ["Cheetah", "Lion", "Horse", "Gazelle"],
+        "correct_answer": "Cheetah"
+      },
+      {
+        "question": "How many sides does a snowflake have?",
+        "answers": ["6", "4", "8", "5"],
+        "correct_answer": "6"
+      },
+      {
+        "question": "What do you call baby frogs?",
+        "answers": ["Tadpoles", "Froglets", "Pollywogs", "Cubs"],
+        "correct_answer": "Tadpoles"
+      },
+      {
+        "question": "What is the main source of Earth's energy?",
+        "answers": ["The sun", "The moon", "Wind", "Water"],
+        "correct_answer": "The sun"
+      },
+      {
+        "question": "What is the largest planet in our solar system?",
+        "answers": ["Jupiter", "Saturn", "Earth", "Neptune"],
+        "correct_answer": "Jupiter"
+      },
+      {
+        "question": "What do bees make?",
+        "answers": ["Honey", "Milk", "Silk", "Wax"],
+        "correct_answer": "Honey"
+      },
+      {
+        "question": "What happens to water at 100°C?",
+        "answers": ["It boils", "It freezes", "It melts", "It disappears"],
+        "correct_answer": "It boils"
+      },
+      {
+        "question": "How many wings does a butterfly have?",
+        "answers": ["4", "2", "6", "8"],
+        "correct_answer": "4"
+      },
+      {
+        "question": "What is the smallest unit of matter?",
+        "answers": ["Atom", "Cell", "Molecule", "Gene"],
+        "correct_answer": "Atom"
+      },
+      {
+        "question": "Which animal is known for changing colors?",
+        "answers": ["Chameleon", "Tiger", "Zebra", "Leopard"],
+        "correct_answer": "Chameleon"
+      },
+      {
+        "question": "What do we call animals that eat only plants?",
+        "answers": ["Herbivores", "Carnivores", "Omnivores", "Predators"],
+        "correct_answer": "Herbivores"
+      },
+      {
+        "question": "How many phases does the moon have?",
+        "answers": ["8", "4", "6", "12"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What gas makes up most of Earth's atmosphere?",
+        "answers": ["Nitrogen", "Oxygen", "Carbon dioxide", "Helium"],
+        "correct_answer": "Nitrogen"
+      },
+      {
+        "question": "What part of the plant absorbs water?",
+        "answers": ["Roots", "Leaves", "Stem", "Flowers"],
+        "correct_answer": "Roots"
+      },
+      {
+        "question": "What is the study of weather called?",
+        "answers": ["Meteorology", "Geology", "Biology", "Astronomy"],
+        "correct_answer": "Meteorology"
+      },
+      {
+        "question": "How many legs does a spider have?",
+        "answers": ["8", "6", "10", "4"],
+        "correct_answer": "8"
+      },
+      {
+        "question": "What makes thunder?",
+        "answers": ["Lightning", "Wind", "Rain", "Clouds"],
+        "correct_answer": "Lightning"
+      },
+      {
+        "question": "What is the fastest bird?",
+        "answers": ["Peregrine falcon", "Eagle", "Ostrich", "Hummingbird"],
+        "correct_answer": "Peregrine falcon"
+      },
+      {
+        "question": "What do you call a baby kangaroo?",
+        "answers": ["Joey", "Cub", "Pup", "Kit"],
+        "correct_answer": "Joey"
+      },
+      {
+        "question": "Which rock is formed by cooling lava?",
+        "answers": ["Igneous", "Sedimentary", "Metamorphic", "Limestone"],
+        "correct_answer": "Igneous"
+      },
+      {
+        "question": "What organ helps you breathe?",
+        "answers": ["Lungs", "Heart", "Stomach", "Brain"],
+        "correct_answer": "Lungs"
+      },
+      {
+        "question": "What is the tool used to see tiny things?",
+        "answers": ["Microscope", "Telescope", "Stethoscope", "Thermometer"],
+        "correct_answer": "Microscope"
+      },
+      {
+        "question": "What season comes after winter?",
+        "answers": ["Spring", "Summer", "Fall", "Autumn"],
+        "correct_answer": "Spring"
+      },
+      {
+        "question": "What is the colored part of your eye called?",
+        "answers": ["Iris", "Pupil", "Retina", "Cornea"],
+        "correct_answer": "Iris"
       }
     ]
   }

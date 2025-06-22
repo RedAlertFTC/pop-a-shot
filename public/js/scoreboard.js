@@ -31,7 +31,7 @@ var swappedQuestions = false;
 
 // Question set selection and long-press variables
 var currentQuestionSet = "robotics";
-var questionSets = ["robotics", "math"];
+var questionSets = ["robotics", "k1-grade-math", "23-grade-math", "45-grade-math", "stem"];
 var longPressStartTime = 0;
 var longPressThreshold = 500; // 1.5 seconds
 var isLongPressing = false;
