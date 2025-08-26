@@ -54,6 +54,8 @@ let controllers = [];
 var released = [];
 var pressed = [];
 
+var gameMode = 2; // 1 = one player, 2 = two players (default)
+
 function preload() {
   splashImage = loadImage("images/splash.jpg");
   backgroundImage = loadImage("images/background.jpg");
@@ -71,8 +73,19 @@ async function loadQuiz() {
 }
 loadQuiz();
 
+// Listen for basket shots on the start screen to select mode
 socket.on("basket", function (msg) {
-  shotMade(msg.num, 0);
+  if (currentScreenState === 0) {
+    if (msg.num === 1) {
+      gameMode = 1;
+      startNewGame();
+    } else if (msg.num === 2) {
+      gameMode = 2;
+      startNewGame();
+    }
+  } else {
+    shotMade(msg.num, 0);
+  }
 });
 
 // this is only run once
@@ -203,7 +216,24 @@ function drawStartScreen() {
   startScreen.fill("yellow");
   startScreen.stroke("purple");
   startScreen.strokeWeight(10);
-  startScreen.textSize(80);
+
+  // Display mode selection instructions at the top
+  startScreen.textSize(50);
+  var modeText1 = "Shoot in Basket 1 or Press '1' for 1 Player";
+  var modeText2 = "Shoot in Basket 2 or Press '2' for 2 Players";
+  startScreen.text(
+    modeText1,
+    width / 2 - startScreen.textWidth(modeText1) / 2,
+    800
+  );
+  startScreen.text(
+    modeText2,
+    width / 2 - startScreen.textWidth(modeText2) / 2,
+    870
+  );
+
+  // Main title and other text
+  startScreen.textSize(100);
   var startText = "by FTC Disaster Management 13295";
   startScreen.text(
     startText,
@@ -236,14 +266,6 @@ function drawStartScreen() {
     height / 2 + 100
   );
 
-  // var startButton = createButton("GET READY!");
-  // startButton.position(width / 2 - 200, height / 2);
-  // startButton.size(400, 100);
-  // startButton.style("font-size", "40px");
-  // startButton.style("background-color", "yellow");
-  // startButton.style("color", "purple");
-  // startButton.mousePressed(startNewGame);
-
   image(startScreen, 0, 0);
 }
 
@@ -264,7 +286,7 @@ function drawMainScreen() {
   if (questionStartTime + 1000 < Date.now()) getReadyText += "2... ";
   if (questionStartTime + 2000 < Date.now()) getReadyText += "1... ";
   if (questionStartTime + 3000 < Date.now())
-    getReadyText = onPi ? "Shoot or Swap!" : "Go!";
+    getReadyText = onPi ? "Play!" : "Go!";
   if (shotClockStart) {
     getReadyText = "";
   }
@@ -288,12 +310,14 @@ function drawMainScreen() {
     var player1ScoreText = "P1: " + player1Score;
     text(player1ScoreText, 400, height / 2 + 200);
 
-    var player2ScoreText = "P2: " + player2Score;
-    text(
-      player2ScoreText,
-      width - textWidth(player2ScoreText) - 400,
-      height / 2 + 200
-    );
+    if (gameMode === 2) {
+      var player2ScoreText = "P2: " + player2Score;
+      text(
+        player2ScoreText,
+        width - textWidth(player2ScoreText) - 400,
+        height / 2 + 200
+      );
+    }
 
     // show shot clock
     if (shotClockStart) {
@@ -316,12 +340,14 @@ function drawMainScreen() {
     var player1ScoreText = "P1: " + player1Score;
     text(player1ScoreText, 100, height - 10);
 
-    var player2ScoreText = "P2: " + player2Score;
-    text(
-      player2ScoreText,
-      width - textWidth(player2ScoreText) - 100,
-      height - 10
-    );
+    if (gameMode === 2) {
+      var player2ScoreText = "P2: " + player2Score;
+      text(
+        player2ScoreText,
+        width - textWidth(player2ScoreText) - 100,
+        height - 10
+      );
+    }
 
     var timerText = minutes + ":" + seconds;
     text(timerText, width / 2 - textWidth(timerText) / 2, height - 10);
@@ -420,9 +446,15 @@ function checkGamepad() {
 }
 
 function keyPressed() {
-  // if spacebar or B is pressed, start new game or begin long-press detection
+  // if on start screen, allow keyboard mode selection
   if (currentScreenState == 0) {
-    if (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0)) {
+    if (key === "1") {
+      gameMode = 1;
+      startNewGame();
+    } else if (key === "2") {
+      gameMode = 2;
+      startNewGame();
+    } else if (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0)) {
       if (!isLongPressing) {
         longPressStartTime = Date.now();
         isLongPressing = true;
@@ -447,8 +479,9 @@ function keyPressed() {
       shotMade(2, 2);
     }
 
-    // if spacebar or B is pressed, swap questions
+    // if spacebar or B is pressed, swap questions (only in 2-player mode)
     if (
+      gameMode === 2 &&
       (keyCode === " ".charCodeAt(0) || keyCode === "B".charCodeAt(0)) &&
       !swappedQuestions &&
       Date.now() > questionStartTime + 3000
@@ -505,6 +538,7 @@ function startNewGame() {
   randomQuestion();
 }
 
+// In shotMade, only update player2Score if gameMode == 2
 function shotMade(basket, whoMadeIt) {
   if (!isGamePlaying) return;
   if (Date.now() < questionStartTime + 3000) return;
@@ -512,27 +546,15 @@ function shotMade(basket, whoMadeIt) {
   if (basket == 1) {
     if (leftAnswer == correctAnswer) {
       if (whoMadeIt == 1 || whoMadeIt == 0) player1Score += 2;
-      if (whoMadeIt == 2) player2Score += 2;
+      if (whoMadeIt == 2 && gameMode == 2) player2Score += 2;
       randomQuestion();
     }
-    // else {
-    //   if (swappedQuestions) {
-    //     player2Score += 1;
-    //     randomQuestion();
-    //   }
-    // }
   } else if (basket == 2) {
     if (rightAnswer == correctAnswer) {
       if (whoMadeIt == 1) player1Score += 2;
-      if (whoMadeIt == 2 || whoMadeIt == 0) player2Score += 2;
+      if ((whoMadeIt == 2 || whoMadeIt == 0) && gameMode == 2) player2Score += 2;
       randomQuestion();
     }
-    // else {
-    //   if (swappedQuestions) {
-    //     player1Score += 1;
-    //     randomQuestion();
-    //   }
-    // }
   }
 }
 

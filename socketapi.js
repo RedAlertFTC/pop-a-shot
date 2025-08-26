@@ -3,8 +3,10 @@ const Gpio = require("onoff").Gpio;
 const readline = require("readline");
 const fs = require("fs");
 
-function isRaspberryPi() {
-  try {
+function isRaspberryPi() 
+{
+  try 
+  {
     const model = fs
       .readFileSync("/sys/firmware/devicetree/base/model", "utf8")
       .toLowerCase();
